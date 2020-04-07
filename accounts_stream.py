@@ -1,7 +1,7 @@
 from typing import TypedDict, List
 from account import Accounts, Account
 import json
-
+import os
 
 class AccountJSON(TypedDict):
 	name: str
@@ -32,6 +32,9 @@ def accounts_to_json(accounts: Accounts) -> AccountsJSON:
 class AccountsStream:
 	def __init__(self, path: str) -> None:
 		self.path: str = path
+
+	def exist(self) -> bool:
+		return os.path.exists(self.path)
 
 	def load(self) -> Accounts:
 		with open(self.path, "r") as f:
