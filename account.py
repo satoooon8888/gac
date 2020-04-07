@@ -1,4 +1,4 @@
-from typing import List, Iterator
+from typing import Iterator
 
 
 class AccountNotFoundError(Exception):
@@ -16,8 +16,8 @@ class Account:
 
 
 class Accounts:
-	def __init__(self, account_list: List[Account]):
-		self.account_list = account_list
+	def __init__(self):
+		self.account_list = []
 
 	def __iter__(self) -> Iterator[Account]:
 		return iter(self.account_list)
