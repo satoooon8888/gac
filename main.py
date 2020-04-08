@@ -48,6 +48,7 @@ def main() -> None:
 	parser: argparse.ArgumentParser = generate_parser()
 	args: argparse.Namespace = parser.parse_args()
 	init()
+
 	if hasattr(args, 'handler'):
 		# intellijで何故かargs.handlerがstrとされる
 		try:
@@ -61,3 +62,6 @@ def main() -> None:
 		logger.error("Undefined command")
 		parser.print_help()
 		sys.exit(1)
+
+if __name__ == "__main__":
+	main()
