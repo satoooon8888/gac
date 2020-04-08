@@ -22,6 +22,9 @@ class Accounts:
 	def __iter__(self) -> Iterator[Account]:
 		return iter(self.account_list)
 
+	def __len__(self):
+		return len(self.account_list)
+
 	def find_account(self, name: str) -> Account:
 		for account in self.account_list:
 			if account.name == name:
