@@ -38,7 +38,7 @@ def generate_parser() -> argparse.ArgumentParser:
 
 
 def init() -> None:
-	if os.path.exists(accounts_json_path):
+	if not os.path.exists(accounts_json_path):
 		logger.warning("Can't Find accounts.json. Create it")
 		stream: AccountsStream = AccountsStream(accounts_json_path)
 		stream.save(Accounts())
@@ -54,7 +54,7 @@ def main() -> None:
 		try:
 			# noinspection PyCallingNonCallable
 			args.handler(args)
-		except CommandFailedError():
+		except CommandFailedError:
 			sys.exit(1)
 		else:
 			sys.exit(0)
