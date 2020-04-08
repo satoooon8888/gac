@@ -28,6 +28,7 @@ def generate_parser() -> argparse.ArgumentParser:
 	current_parser.set_defaults(handler=cmd_current)
 	# set
 	set_parser = sub_parser.add_parser("set")
+	set_parser.add_argument("name", type=str)
 	set_parser.set_defaults(handler=cmd_set)
 	# add
 	add_parser = sub_parser.add_parser("add")
