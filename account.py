@@ -41,6 +41,7 @@ class Accounts:
 		for i, account in enumerate(self.account_list):
 			if account.name == name:
 				self.account_list.pop(i)
+				return
 		raise AccountNotFoundError()
 
 	def add(self, account: Account) -> None:

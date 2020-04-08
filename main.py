@@ -33,8 +33,9 @@ def generate_parser() -> argparse.ArgumentParser:
 	add_parser = sub_parser.add_parser("add")
 	add_parser.set_defaults(handler=cmd_add)
 	# add
-	add_parser = sub_parser.add_parser("delete")
-	add_parser.set_defaults(handler=cmd_delete)
+	delete_parser = sub_parser.add_parser("delete")
+	delete_parser.add_argument("name", type=str)
+	delete_parser.set_defaults(handler=cmd_delete)
 	# list
 	list_parser = sub_parser.add_parser("list")
 	list_parser.set_defaults(handler=cmd_list)
