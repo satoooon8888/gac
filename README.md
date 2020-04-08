@@ -10,8 +10,8 @@ $ pip install git+https://github.com/satoooon8888/gac.git
 # Usage
 ```shell script
 $ gac add                        # add user setting
-> user.name: john                (user input example)
-> user.email: john@mail.com      (user input example)
+> git user.name: john                (user input example)
+> git user.email: john@mail.com      (user input example)
 $ gac set john                   # set git user config
 $ git config --global user.email # test
 > john@gmail.com
