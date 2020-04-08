@@ -1,10 +1,10 @@
 import argparse
-from account import Accounts, Account
-from accounts_stream import AccountsStream
-from git_config_stream import GitConfigStream
-from const_setting import accounts_json_path
-from utils import CommandFailedError
-import logger
+from gac.account import Accounts, Account
+from gac.accounts_stream import AccountsStream
+from gac.git_config_stream import GitConfigStream
+from gac.const_setting import accounts_json_path
+from gac.utils import CommandFailedError
+from gac import logger
 
 
 def cmd_set(args: argparse.Namespace) -> None:

@@ -1,6 +1,6 @@
 import argparse
-from git_config_stream import GitConfigStream
-import logger
+from gac.git_config_stream import GitConfigStream
+from gac import logger
 
 
 def cmd_current(args: argparse.Namespace) -> None:

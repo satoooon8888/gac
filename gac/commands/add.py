@@ -1,9 +1,9 @@
 import argparse
-from const_setting import accounts_json_path
-from account import Accounts, Account
-from accounts_stream import AccountsStream
-from utils import CommandFailedError
-import logger
+from gac.const_setting import accounts_json_path
+from gac.account import Accounts, Account
+from gac.accounts_stream import AccountsStream
+from gac.utils import CommandFailedError
+from gac import logger
 
 
 def cmd_add(args: argparse.Namespace) -> None:

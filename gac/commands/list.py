@@ -1,9 +1,9 @@
 import argparse
-from account import Accounts
-from accounts_stream import AccountsStream
-from const_setting import accounts_json_path
-from utils import CommandFailedError
-import logger
+from gac.account import Accounts
+from gac.accounts_stream import AccountsStream
+from gac.const_setting import accounts_json_path
+from gac.utils import CommandFailedError
+from gac import logger
 
 
 def cmd_list(args: argparse.Namespace) -> None:
@@ -17,6 +17,6 @@ def cmd_list(args: argparse.Namespace) -> None:
 		longest_name_length = max(longest_name_length, len(account.name))
 	longest_name_length += 0
 	logger.info("NAME" + " " * (longest_name_length - 4) + " | EMAIL")
-	logger.info("-"*(longest_name_length + 8))
+	logger.info("-" * (longest_name_length + 8))
 	for account in accounts:
 		logger.info(account.name + " " * (longest_name_length - len(account.name)) + " | " + account.email)

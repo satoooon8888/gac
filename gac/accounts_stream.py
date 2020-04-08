@@ -1,5 +1,5 @@
 from typing import TypedDict, List
-from account import Accounts, Account
+from gac.account import Accounts, Account
 import json
 import os
 
