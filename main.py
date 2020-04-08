@@ -3,6 +3,7 @@ from commands.current import cmd_current
 from commands.set import cmd_set
 from commands.add import cmd_add
 from commands.list import cmd_list
+from commands.delete import cmd_delete
 from account import Accounts
 from accounts_stream import AccountsStream
 from utils import CommandFailedError
@@ -31,6 +32,9 @@ def generate_parser() -> argparse.ArgumentParser:
 	# add
 	add_parser = sub_parser.add_parser("add")
 	add_parser.set_defaults(handler=cmd_add)
+	# add
+	add_parser = sub_parser.add_parser("delete")
+	add_parser.set_defaults(handler=cmd_delete)
 	# list
 	list_parser = sub_parser.add_parser("list")
 	list_parser.set_defaults(handler=cmd_list)
