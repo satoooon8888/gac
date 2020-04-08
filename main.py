@@ -3,9 +3,13 @@ from commands.current import cmd_current
 from commands.set import cmd_set
 from commands.add import cmd_add
 from commands.list import cmd_list
-import sys
+from account import Accounts
+from accounts_stream import AccountsStream
 from utils import CommandFailedError
+from const_setting import accounts_json_path
 import logger
+import sys
+import os
 
 """
 gac current
@@ -34,7 +38,10 @@ def generate_parser() -> argparse.ArgumentParser:
 
 
 def init() -> None:
-	pass
+	if os.path.exists(accounts_json_path):
+		logger.warning("Can't Find accounts.json. Create it")
+		stream: AccountsStream = AccountsStream(accounts_json_path)
+		stream.save(Accounts())
 
 
 def main() -> None:
